@@ -32,8 +32,11 @@ public class BookReviews
         if ((myRating < 0) || (myRating > 5)){
             System.out.println("Rating must in range 0 to 5");
             return false;
-        } 
-        else if (review.isEmpty()){
+        }
+        // else if (review.compareTo(null) == 0){
+            // return false;
+        // }
+        else if (review.trim().isEmpty()){
             System.out.println("Review text is empty");
             return false;
         } else {

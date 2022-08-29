@@ -11,42 +11,47 @@ import org.junit.jupiter.api.Test;
  * A classe de teste BookReviewsTest.
  *
  * @author  André
- * @version 1.0
+ * @version 1.1
  */
 public class BookReviewsTest
 {
-    /**
-     * Construtor default para a classe de teste BookReviewsTest
-     */
+    private BookReviews b1;
+    
     public BookReviewsTest()
     {
+        b1 = new BookReviews("fishing", "smith");
     }
 
-    /**
-     * Define a 'fixture' do teste.
-     *
-     * Chamado antes de cada método de caso de teste.
-     */
-    @BeforeEach
-    public void setUp()
-    {
-    }
-
-    /**
-     * Desfaz a 'fixture' do teste.
-     *
-     * Chamado após cada método de teste de caso.
-     */
-    @AfterEach
-    public void tearDown()
-    {
-    }
     
     @Test
     public void test1(){
-        BookReviews b1 = new BookReviews("fishing", "smith");
         assertEquals(
             b1.addReview("A splendid read - highly recomended", 5), 
             true);
+    }
+    
+    @Test
+    public void blankStringTest(){
+        assertEquals(b1.addReview(" ", 0), false); 
+    }
+    
+    @Test
+    public void textoTamanhoZero(){
+        assertEquals(b1.addReview("", 2), false);
+    }
+    
+    // @Test
+    // public void nullText(){
+        // assertEquals(b1.addReview(null, 2), false);
+    // }
+    
+    @Test
+    public void invalidRatingMaiorQueMaximo(){
+        assertEquals(b1.addReview("study",6), false);
+    }
+    
+    @Test
+    public void invalidRatingMenorQueMinimo(){
+        assertEquals(b1.addReview("study", -1), false);
     }
 }
