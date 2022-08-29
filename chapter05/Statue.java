@@ -18,5 +18,11 @@ public class Statue extends Item
         this.colour = colour;
     }
     
-    
+    public void displayDetails(){
+        System.out.println("------ Statue ------");
+        System.out.println("This statue was created by "+ creator);
+        System.out.println("It has a value of "+ value +" pounds");
+        System.out.println("It weighs "+ weight +" kg");
+        System.out.println("It is "+ colour +" in colour");
+    }
 }

@@ -32,4 +32,12 @@ public class Vase extends Item
             System.out.println("Vase value not yet determined");
         }
     }
+    
+    public void displayDetails(){
+        System.out.println("------ Vase ------");
+        System.out.println("This vase was created by "+ creator);
+        System.out.println("It has a value of "+ value +" pounds");
+        System.out.println("It is "+ height +" cm tall");
+        System.out.println("It is made of "+ material);
+    }
 }

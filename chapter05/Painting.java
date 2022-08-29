@@ -30,4 +30,23 @@ public class Painting extends Item
     public void trimPainting(int amount){
         width -= amount;
     }
+    
+    public void displayDetails(){
+        System.out.println("------ Painting ------");
+        System.out.println("This painting was created by "+ creator);
+        System.out.println("It has a value of "+ value +" pounds");
+        
+        if (isWatercolour){
+            System.out.println("It is a watercolour");
+        }
+        
+        if (isFramed){
+            System.out.println("It is a framed picture");
+        } else {
+            System.out.println("It is a unframed picture");
+        }
+        
+        System.out.println("The height is "+ height +" cm");
+        System.out.println("The width is "+ width +" cm");
+    }
 }
