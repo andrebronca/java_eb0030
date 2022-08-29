@@ -9,14 +9,25 @@ package chapter05;
  */
 public class Painting extends Item
 {
-    public int height;
-    public int width;
-    public boolean isWatercolour;
-    public boolean isFramed;
+    private int height;
+    private int width;
+    private boolean isWatercolour;
+    private boolean isFramed;
     
-    public Painting(int value, String creator, int height, int width){
+    public Painting(int value, String creator, int height, int width,
+        boolean isWatercolour, boolean isFramed){
         super(value, creator);
         this.height = height;
         this.width = width;
+        this.isWatercolour = isWatercolour;
+        this.isFramed = isFramed;
+    }
+    
+    public void trimPainting(){
+        width -= 1;
+    }
+    
+    public void trimPainting(int amount){
+        width -= amount;
     }
 }

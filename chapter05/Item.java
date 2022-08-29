@@ -9,15 +9,15 @@ package chapter05;
  */
 public class Item
 {
-    public int value;
-    public String creator;
+    protected int value;
+    protected String creator;
     
     public Item(int value, String creator){
         this.value = value;
         this.creator = creator;
     }
     
-    public void showValue(){
+    protected void showValue(){
         System.out.println("This item is worth "+ value +" pounds");
     }
 }

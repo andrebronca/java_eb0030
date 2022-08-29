@@ -9,12 +9,27 @@ package chapter05;
  */
 public class Vase extends Item
 {
-    public int height;
-    public String material;
+    private int height;
+    private String material;
     
     public Vase(int value, String creator, int height, String material){
         super(value, creator);
         this.height = height;
         this.material = material;
+    }
+    
+    public Vase(int height, String material){
+        super(0, "unknown");
+        this.height = height;
+        this.material = material;
+    }
+    
+    @Override
+    public void showValue(){
+        if (value > 0){
+            System.out.println("This vase is worth "+ value +" pounds");
+        } else {
+            System.out.println("Vase value not yet determined");
+        }
     }
 }

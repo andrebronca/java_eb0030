@@ -9,12 +9,14 @@ package chapter05;
  */
 public class Statue extends Item
 {
-    public int weight;
-    public String colour;
+    private int weight;
+    private String colour;
     
     public Statue(int value, String creator, int weight, String colour){
         super(value, creator);
         this.weight = weight;
         this.colour = colour;
     }
+    
+    
 }
