@@ -18,21 +18,45 @@ public class Customer
         this.lastName = lastName;
         this.firstName = firstName;
         this.address = address;
+        myOrder = new Order();
     }
 
-    void addItemToOrder(Item i){
-        
+    public void addItemToOrder(Item item){
+        myOrder.addItem(item);
     }
     
-    void deleteItemFromOrder(int i){
-        
+    public void deleteItemFromOrder(int i){
+        myOrder.deleteItem(i);
     }
     
-    void displayDetailsOfOrder(){
-        
+    public void deleteItemFromName(String nameItem){
+        myOrder.deleteItem(nameItem);
     }
     
-    void summariseOrder(){
-        
+    public void displayDetailsOfOrder(){
+        System.out.println("----- Detalhe do pedido");
+        cabecalhoCustomer();
+        myOrder.detailsOrder();
+        System.out.println("--------------------------");
+    }
+    
+    private void cabecalhoCustomer(){
+        System.out.println("Customer: "+ lastName +", "+ firstName 
+            + address);
+    }
+    
+    public Order getOrder(){
+        return myOrder;
+    }
+    
+    public void summariseOrder(){
+        System.out.println("----- Resumo do pedido");
+        cabecalhoCustomer();
+        myOrder.summarise();
+        System.out.println("--------------------------");
+    }
+    
+    public double calculateTotalCost(){
+        return myOrder.calculatetotalCost();
     }
 }

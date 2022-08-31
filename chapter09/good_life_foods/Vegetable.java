@@ -11,9 +11,17 @@ public class Vegetable extends Item
 {
     private double weight;
    
+    /**
+     * A superclasse já verifica se name e uniCost são null ou > 0.0
+     * Aqui a validação é feita apenas para o atributo de instância.
+     * Caso retorne valor padrão de algum atributo: null, 0
+     * significa que na inserção foi fornecido algum valor inválido
+     */
     public Vegetable(String name, double unitCost, double weight){
         super(name, unitCost);
-        this.weight = weight;
+        if (weight > 0.0){
+            this.weight = weight;
+        }
     }
 
     public double calculateCost(){
@@ -21,6 +29,9 @@ public class Vegetable extends Item
     }
     
     public void describeItem(){
-        
+        System.out.println("\t"+ super.getName() +"\n"
+            +"\t\tUnit Cost: $"+ String.format("%.2f", super.getUnitCost()) +"\n"
+            +"\t\tWeight: "+ String.format("%.2f", weight)
+        );
     }
 }

@@ -13,8 +13,10 @@ public abstract class Item
     double unitCost;
     
     public Item(String name, double unitCost){
-        this.name = name;
-        this.unitCost = unitCost;
+        if (name != null && unitCost > 0.0){
+            this.name = name.trim();
+            this.unitCost = unitCost;
+        }
     }
     
     public String getName(){
